@@ -40,13 +40,6 @@ define Package/libgd
   VARIANT:=default
 endef
 
-define Package/libgd-full
-  $(call Package/libgd/default)
-  DEPENDS+=+libtiff +libfreetype
-  TITLE+=(full)
-  VARIANT:=full
-endef
-
 define Package/libgd/description/default
   GD is an open source code library for the dynamic creation of images by
   programmers. GD creates PNG, JPEG and GIF images, among other formats.
@@ -123,4 +116,3 @@ endef
 Package/libgd-full/install=$(Package/libgd/install)
 
 $(eval $(call BuildPackage,libgd))
-$(eval $(call BuildPackage,libgd-full))
